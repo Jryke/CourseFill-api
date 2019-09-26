@@ -1,7 +1,7 @@
 const express = require('express')
 const database = require('./database')
 const bodyParser = require('body-parser')
-// const cors = require('cors')
+const cors = require('cors')
 require('dotenv').config()
 
 
@@ -9,7 +9,7 @@ require('dotenv').config()
 const app = express()
 
 // Middleware
-// app.use(cors())
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -25,6 +25,9 @@ app.get('/', (req, res) => res.send('Welcome to Course Registration'))
 	//Teacher
 	app.post('/signup', require('./controllers/signupTeacher.js'))
 	app.post('/login/teacher', require('./controllers/loginTeacher.js'))
+
+	//Student
+	app.post('/student/signup', require('./controllers/signupStudent.js'))
 
 
 
