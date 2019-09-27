@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-let teacher = mongoose.model('teacher', {
+let user = mongoose.model('user', {
 first_name: {
 	type: String,
 	required: [true, 'First name is required'],
@@ -22,13 +22,19 @@ last_name: {
 		required: true,
 		select: false
 	},
-	isAdmin: {
-		type: Boolean
+	classes: {
+		type: []
+	},
+	role: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'role',
+		required: true
 	},
 	school: {
 	type: mongoose.Schema.Types.ObjectId,
-	ref: 'school'
+	ref: 'school',
+	required: true
 			}
 })
 
-module.exports = teacher
+module.exports = user

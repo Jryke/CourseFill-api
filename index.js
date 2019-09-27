@@ -9,7 +9,7 @@ require('dotenv').config()
 const app = express()
 
 // Middleware
-app.use(cors())
+app.use(cors({credentials: true}))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -22,12 +22,11 @@ app.get('/', (req, res) => res.send('Welcome to Course Registration'))
 	//School
 	app.post('/school', require('./controllers/postSchool.js'))
 
-	//Teacher
-	app.post('/signup', require('./controllers/signupTeacher.js'))
-	app.post('/login/teacher', require('./controllers/loginTeacher.js'))
+	//User
+	app.post('/signup', require('./controllers/signup.js'))
+	app.post('/login', require('./controllers/login.js'))
 
-	//Student
-	app.post('/student/signup', require('./controllers/signupStudent.js'))
+
 
 
 
