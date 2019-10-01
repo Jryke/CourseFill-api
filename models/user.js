@@ -26,8 +26,9 @@ last_name: {
 		type: []
 	},
 	role: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'role',
+		type: String,
+		enum: ['admin', 'teacher', 'student'],
+		default: 'student',
 		required: true
 	},
 	school: {
