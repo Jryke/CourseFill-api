@@ -31,6 +31,10 @@ last_name: {
 		default: 'student',
 		required: true
 	},
+	avatar: {
+		type: String,
+		default: 'https://thispersondoesnotexist.com'
+	},
 	school: {
 	type: mongoose.Schema.Types.ObjectId,
 	ref: 'school',

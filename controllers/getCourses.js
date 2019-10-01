@@ -1,7 +1,7 @@
-let Classes = require('../models/classes.js')
+let Courses = require('../models/courses.js')
 
 module.exports = (req, res) => {
-Classes.find({})
+Courses.find({}).populate('teachers students')
  .then(data => {res.send(data)})
  .catch(err => {
  res.send(err)

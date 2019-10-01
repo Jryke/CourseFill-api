@@ -27,8 +27,8 @@ app.get('/', (req, res) => res.send('Welcome to Course Registration'))
 	app.post('/login', require('./controllers/login.js'))
 
 	//Classes
-	app.post('/admin/postClass', require('./controllers/postClass.js'))
-	app.get('/admin/classes', require('./controllers/getClasses.js'))
+	app.post('/admin/postCourse', require('./controllers/postCourse.js'))
+	app.get('/admin/courses', require('./controllers/getCourses.js'))
 
 
 
