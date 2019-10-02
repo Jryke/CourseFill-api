@@ -30,7 +30,12 @@ let courses = mongoose.model('courses', {
 	students: {
 		type: [mongoose.Schema.Types.ObjectId],
 		ref: 'user'
-	}
+	},
+	registration: {
+		registered: Number,
+		limit: Number
+	},
+	price: Number
 })
 
 module.exports = courses
