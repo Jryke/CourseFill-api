@@ -13,9 +13,15 @@ let courses = mongoose.model('courses', {
 	description: {
 		type: String,
 	},
-	schedule: {
-		type: String,
-	},
+	schedule:
+		{
+			startDate: String,
+			endDate: String,
+			startTime: String,
+			endTime: String,
+			days: []
+		}
+	,
 	teachers: {
 		type: [mongoose.Schema.Types.ObjectId],
 		ref: 'user',

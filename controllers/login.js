@@ -12,10 +12,10 @@ User.findOne({ email: req.body.email})
 		if (!validPassword) {
 			res.status(400).send('Email or password is incorrect')}
 			else {
-			const token = jwt.sign({_id: data._id}, process.env.TOKEN_SECRET)
-			res.send(token)
+				const token = jwt.sign(data, process.env.TOKEN_SECRET)
+				res.send({data: data, token: token})}
 			}
-		})
+		)
 	.catch(err => {
 	res.send('Email or password is incorrect')
 	})
