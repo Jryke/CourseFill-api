@@ -25,12 +25,12 @@ app.get('/', (req, res) => res.send('Welcome to Course Registration'))
 	//User
 	app.post('/signup', require('./controllers/signup.js'))
 	app.post('/login', require('./controllers/login.js'))
+	app.get('/user/:id', require('./controllers/getUser.js'))
 
 	//Courses
 	app.post('/admin/postCourse', require('./controllers/postCourse.js'))
 	app.get('/courses', require('./controllers/getCourses.js'))
 	app.get('/courses/:id', require('./controllers/getCourse.js'))
-
 
 
 
