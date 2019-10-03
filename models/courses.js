@@ -38,6 +38,7 @@ let courses = mongoose.model('courses', {
 	price: {
 		type: Number,
 		required: true
+}
 })
 
 module.exports = courses
