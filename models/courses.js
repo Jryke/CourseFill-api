@@ -35,7 +35,9 @@ let courses = mongoose.model('courses', {
 		registered: Number,
 		limit: Number
 	},
-	price: Number
+	price: {
+		type: Number,
+		required: true
 })
 
 module.exports = courses
