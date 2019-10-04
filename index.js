@@ -12,6 +12,7 @@ const app = express()
 app.use(cors({credentials: true}))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+const auth = app.use(require('./controllers/auth'))
 
 // Database
 database
@@ -31,6 +32,8 @@ app.get('/', (req, res) => res.send('Welcome to Course Registration'))
 	app.post('/admin/postCourse', require('./controllers/postCourse.js'))
 	app.get('/courses', require('./controllers/getCourses.js'))
 	app.get('/courses/:id', require('./controllers/getCourse.js'))
+	app.patch('/courses/:id', require('./controllers/patchCourse.js'))
+
 
 
 

@@ -39,7 +39,10 @@ last_name: {
 	type: mongoose.Schema.Types.ObjectId,
 	ref: 'school',
 	required: true
-			}
+	},
+created_at: {
+	type: Date,
+	default: Date.now}
 })
 
 module.exports = user

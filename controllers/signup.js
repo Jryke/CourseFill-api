@@ -10,8 +10,8 @@ let postUser =
 	// SIGNUP STUDENT
 	User.create(req.body)
 	.then(data => {
-		const token = jwt.sign([{_id: data._id},{role: data.role}], process.env.TOKEN_SECRET)
-		res.send({data: data, token: token})})
+		const token = jwt.sign({_id: data._id,email: data.email, role: data.role}, process.env.TOKEN_SECRET)
+		res.send({data, token})})
 	.catch(err => {console.log(err)})
 }
 
