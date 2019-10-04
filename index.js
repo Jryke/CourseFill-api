@@ -12,7 +12,7 @@ const app = express()
 app.use(cors({credentials: true}))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-const auth = app.use(require('./controllers/auth'))
+// const auth = app.use(require('./controllers/auth'))
 
 // Database
 database
