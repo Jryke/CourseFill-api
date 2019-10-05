@@ -22,7 +22,7 @@ last_name: {
 		required: true,
 		select: false
 	},
-	classes: {
+	courses: {
 		type: []
 	},
 	role: {
@@ -40,9 +40,20 @@ last_name: {
 	ref: 'school',
 	required: true
 	},
-created_at: {
-	type: Date,
-	default: Date.now}
+	created_at: {
+		type: Date,
+		default: Date.now
+	},
+	about: String,
+	address: {
+		streetAddress: {type: String, required: true},
+		city: {type: String, required: true},
+		state: {type: String, required: true},
+		country: {type: String, required: true},
+		zipCode: {type: Number, required: true},
+	}
+
+
 })
 
 module.exports = user
