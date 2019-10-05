@@ -8,7 +8,9 @@ Users.find({role: 'student'}).populate({
 	model: 'courses',
 	populate: {
 		path: 'teachers',
-		model: 'user' }})
+		model: 'user',
+	 	select: 'first_name last_name avatar'}})
+
 .then(data => {res.send(data)})
  .catch(err => {
  res.send(err)
