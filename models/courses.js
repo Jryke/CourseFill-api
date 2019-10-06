@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 let courses = mongoose.model('courses', {
-
 	name: {
 		type: String,
 		required: true,
@@ -14,13 +13,13 @@ let courses = mongoose.model('courses', {
 		type: String,
 	},
 	schedule:
-		{
-			startDate: String,
-			endDate: String,
-			startTime: String,
-			endTime: String,
-			days: []
-		}
+	{
+		startDate: String,
+		endDate: String,
+		startTime: String,
+		endTime: String,
+		days: []
+	}
 	,
 	teachers: {
 		type: [mongoose.Schema.Types.ObjectId],
@@ -38,7 +37,7 @@ let courses = mongoose.model('courses', {
 	price: {
 		type: Number,
 		required: true
-}
+	}
 })
 
 module.exports = courses

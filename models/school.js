@@ -1,12 +1,11 @@
 const mongoose = require('mongoose')
 
 let school = mongoose.model('school', {
-
-name: {
-	type: String,
-	required: true,
-	unique: true
-			},
+	name: {
+		type: String,
+		required: true,
+		unique: true
+	},
 	website: {
 		type: String,
 	},
