@@ -22,6 +22,9 @@ app.get('/', (req, res) => res.send('Welcome to Course Registration'))
 
 //School
 app.post('/school', require('./controllers/postSchool.js'))
+app.post('/subjects', require('./controllers/postSubject.js'))
+app.get('/subjects', require('./controllers/getSubjects.js'))
+
 
 //User
 app.post('/signup', require('./controllers/signup.js'))
@@ -31,6 +34,7 @@ app.get('/users/:role', require('./controllers/getUsers.js'))
 app.get('/students', require('./controllers/getStudents.js'))
 app.patch('/students/:id', require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
+
 
 
 
