@@ -32,6 +32,7 @@ app.post('/login', require('./controllers/login.js'))
 app.get('/user/:id', require('./controllers/getUser.js'))
 app.get('/users/:role', require('./controllers/getUsers.js'))
 app.get('/students', require('./controllers/getStudents.js'))
+app.get('/students/:id', require('./controllers/getUser.js'))
 app.patch('/students/:id', require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
 
