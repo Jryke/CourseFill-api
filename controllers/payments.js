@@ -1,5 +1,4 @@
-const stripe = require('stripe')('sk_test_KJRnAEY2ZLWMQelm6WBADR7400DVgw3kNS
-')
+const stripe = require('stripe')(process.env.STRIPE_SK)
 
 stripe.charges.create({
   amount: 100,
