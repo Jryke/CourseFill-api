@@ -35,6 +35,7 @@ app.get('/students', require('./controllers/getStudents.js'))
 app.get('/students/:id', require('./controllers/getUser.js'))
 app.patch('/students/:id', require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
+app.patch('/teachers/:id', require('./controllers/patchUser.js'))
 
 
 
