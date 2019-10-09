@@ -38,7 +38,7 @@ let user = mongoose.model('user', {
 	school: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'school',
-		required: true
+		// required: true
 	},
 	created_at: {
 		type: Date,
@@ -46,11 +46,11 @@ let user = mongoose.model('user', {
 	},
 	about: String,
 	address: {
-		streetAddress: { type: String, required: true },
-		city: { type: String, required: true },
-		state: { type: String, required: true },
-		country: { type: String, required: true },
-		zipCode: { type: Number, required: true },
+		streetAddress: { type: String },
+		city: { type: String },
+		state: { type: String },
+		country: { type: String},
+		zipCode: { type: Number },
 	}
 })
 
