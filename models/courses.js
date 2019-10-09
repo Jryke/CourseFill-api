@@ -24,7 +24,6 @@ let courses = mongoose.model('courses', {
 	teachers: {
 		type: [mongoose.Schema.Types.ObjectId],
 		ref: 'user',
-		required: true
 	},
 	students: {
 		type: [mongoose.Schema.Types.ObjectId],
