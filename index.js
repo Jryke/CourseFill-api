@@ -42,6 +42,7 @@ app.post('/admin/postCourse', require('./controllers/postCourse.js'))
 app.get('/courses', require('./controllers/getCourses.js'))
 app.get('/courses/:id', require('./controllers/getCourse.js'))
 app.patch('/courses/:id', require('./controllers/patchCourse.js'))
+app.delete('/course/:id', require('./controllers/deleteCourse.js'))
 app.post('/courses', (req, res) => { //generates the list of products in the cart
   let courses = [], id = null;
   let cart = JSON.parse(req.body.cart);
