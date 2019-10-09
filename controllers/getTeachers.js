@@ -3,7 +3,7 @@ let Courses = require('../models/courses.js')
 
 
 module.exports = (req, res) => {
-	Users.find({ role: 'teacher' }).populate({
+	Users.find({ role: {$in:[ 'teacher',  'admin']}}).populate({
 		path: 'courses',
 		model: 'courses',
 		select: 'schedule students subject name',
