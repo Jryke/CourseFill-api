@@ -32,7 +32,11 @@ let courses = mongoose.model('courses', {
 	},
 	registration: {
 		registered: Number,
-		limit: Number
+		limit: {
+			type: Number,
+			required: true,
+			default: 0
+		}
 	},
 	price: {
 		type: Number,
