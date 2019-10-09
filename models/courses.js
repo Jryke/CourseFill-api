@@ -6,8 +6,7 @@ let courses = mongoose.model('courses', {
 		required: true,
 	},
 	subject: {
-		type: [mongoose.Schema.Types.ObjectId],
-		ref: 'subjects',
+		type: String,
 		required: true
 	},
 	description: {
