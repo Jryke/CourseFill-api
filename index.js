@@ -42,22 +42,9 @@ app.post('/admin/postCourse', require('./controllers/postCourse.js'))
 app.get('/courses', require('./controllers/getCourses.js'))
 app.get('/courses/:id', require('./controllers/getCourse.js'))
 app.patch('/courses/:id', require('./controllers/patchCourse.js'))
-app.post('/courses', (req, res) => { //generates the list of products in the cart
-  let courses = [], id = null;
-  let cart = JSON.parse(req.body.cart);
-  if (!cart) return res.send(courses)
-  for (var i = 0; i < data.courses.length; i++) {
-    id = data.courses[i].id.toString();
-    if (cart.hasOwnProperty(id)) {
-      data.courses[i].qty = cart[id]
-      products.push(data.courses[i]);
-    }
-  }
-  return res.send(courses);
-});
 
-
-
+//Payments
+app.post('/pay', require('./controllers/payments.js'))
 
 
 // listen
