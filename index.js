@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 require('dotenv').config()
 
-
 // Express
 const app = express()
 
@@ -22,9 +21,10 @@ app.get('/', (req, res) => res.send('Welcome to Course Registration'))
 
 //School
 app.post('/school', require('./controllers/postSchool.js'))
+
+//Subjects
 app.post('/subjects', require('./controllers/postSubject.js'))
 app.get('/subjects', require('./controllers/getSubjects.js'))
-
 
 //User
 app.post('/signup', require('./controllers/signup.js'))
@@ -36,10 +36,6 @@ app.get('/students/:id', require('./controllers/getUser.js'))
 app.patch('/students/:id', require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
 app.patch('/teachers/:id', require('./controllers/patchUser.js'))
-
-
-
-
 
 //Courses
 app.post('/admin/postCourse', require('./controllers/postCourse.js'))
