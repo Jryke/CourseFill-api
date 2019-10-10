@@ -3,7 +3,7 @@ const stripe = require('stripe')(process.env.STRIPE_SK)
 module.exports = (req, res) => {
 
 	stripe.charges.create({
-  amount: 325,
+  amount: req.body.amount,
   currency: req.body.currency,
   description: req.body.description,
   source: req.body.source
