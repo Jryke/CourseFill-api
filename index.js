@@ -36,6 +36,7 @@ app.get('/students/:id', require('./controllers/getUser.js'))
 app.patch('/students/:id', require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
 app.patch('/teachers/:id', require('./controllers/patchUser.js'))
+app.post('/auth', require('./controllers/postAuthorize.js'))
 
 //Courses
 app.post('/admin/postCourse', require('./controllers/postCourse.js'))
