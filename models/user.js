@@ -46,11 +46,26 @@ let user = mongoose.model('user', {
 	},
 	about: String,
 	address: {
-		streetAddress: { type: String },
-		city: { type: String },
-		state: { type: String },
-		country: { type: String},
-		zipCode: { type: Number },
+		streetAddress: { 
+			type: String,
+			default: ''
+		},
+		city: {
+			type: String,
+			default: ''
+		},
+		state: {
+			type: String,
+			default: ''
+		},
+		country: {
+			type: String,
+			default: ''
+		},
+		zipCode: {
+			type: String,
+			default: ''
+		},
 	}
 })
 
