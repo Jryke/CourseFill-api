@@ -43,6 +43,7 @@ app.post('/admin/postCourse', require('./controllers/postCourse.js'))
 app.get('/courses', require('./controllers/getCourses.js'))
 app.get('/courses/:id', require('./controllers/getCourse.js'))
 app.patch('/courses/:id', require('./controllers/patchCourse.js'))
+app.patch('/courseAddStudent/:id', require('./controllers/patchCourseStudents.js'))
 app.delete('/course/:id', require('./controllers/deleteCourse.js'))
 
 
