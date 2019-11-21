@@ -11,6 +11,8 @@ const app = express()
 app.use(cors({ credentials: true }))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+const multer = require('multer')
+const upload = multer({dest: './images'})
 // const auth = app.use(require('./controllers/auth'))
 
 // Database
