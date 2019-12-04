@@ -40,7 +40,7 @@ app.get('/students', require('./controllers/getStudents.js'))
 app.get('/students/:id', require('./controllers/getUser.js'))
 app.patch('/students/:id', upload.single('avatar'), require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
-app.patch('/teachers/:id', require('./controllers/patchUser.js'))
+app.patch('/teachers/:id', upload.single('avatar'), require('./controllers/patchUser.js'))
 app.post('/auth', require('./controllers/postAuthorize.js'))
 
 //Courses
