@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 const multer = require('multer')
 const upload = multer({dest: './images'})
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'images')))
+
 // const auth = app.use(require('./controllers/auth'))
 
 // Database
@@ -35,7 +38,7 @@ app.get('/user/:id', require('./controllers/getUser.js'))
 app.get('/users/:role', require('./controllers/getUsers.js'))
 app.get('/students', require('./controllers/getStudents.js'))
 app.get('/students/:id', require('./controllers/getUser.js'))
-app.patch('/students/:id', require('./controllers/patchUser.js'))
+app.patch('/students/:id', upload.single('avatar'), require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
 app.patch('/teachers/:id', require('./controllers/patchUser.js'))
 app.post('/auth', require('./controllers/postAuthorize.js'))
