@@ -32,7 +32,7 @@ app.post('/subjects', require('./controllers/postSubject.js'))
 app.get('/subjects', require('./controllers/getSubjects.js'))
 
 //User
-app.post('/signup', require('./controllers/signup.js'))
+app.post('/signup', upload.single('avatar'), require('./controllers/signup.js'))
 app.post('/login', require('./controllers/login.js'))
 app.get('/user/:id', require('./controllers/getUser.js'))
 app.get('/users/:role', require('./controllers/getUsers.js'))
