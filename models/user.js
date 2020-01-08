@@ -33,7 +33,6 @@ let user = mongoose.model('user', {
 	},
 	avatar: {
 		type: String,
-		default: 'https://thispersondoesnotexist.com'
 	},
 	school: {
 		type: mongoose.Schema.Types.ObjectId,
