@@ -7,7 +7,6 @@ module.exports = (req, res) => {
 	User.findOne({ email: req.body.email })
 		.select('password role')
 		.then(data => {
-			console.log(data)
 			// VALIDATE PASSWORD
 			let validPassword = bcrypt.compareSync(req.body.password, data.password)
 			if (!validPassword) {
