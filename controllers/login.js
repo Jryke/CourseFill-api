@@ -7,18 +7,17 @@ module.exports = (req, res) => {
 	User.findOne({ email: req.body.email })
 		.select('password role')
 		.then(data => {
+			console.log(data)
 			// VALIDATE PASSWORD
 			let validPassword = bcrypt.compareSync(req.body.password, data.password)
 			if (!validPassword) {
 				res.status(400).send('Email or password is incorrect')
-			}
-			else {
+			} else {
 				const token = jwt.sign({ _id: data._id, email: data.email, role: data.role }, process.env.TOKEN_SECRET)
-				res.send({ data: data.role, token })
+				res.status(200).send({ data: data.role, token })
 			}
-		}
-		)
+		})
 		.catch(err => {
-			res.send('Email or password is incorrect')
+			res.status(400).send('Email or password is incorrect')
 		})
 }
