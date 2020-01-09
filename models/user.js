@@ -44,6 +44,7 @@ let user = mongoose.model('user', {
 		default: Date.now
 	},
 	about: String,
+	phone: String,
 	address: {
 		streetAddress: { 
 			type: String,
