@@ -38,10 +38,11 @@ app.get('/user/:id', require('./controllers/getUser.js'))
 app.get('/users/:role', require('./controllers/getUsers.js'))
 app.get('/students', require('./controllers/getStudents.js'))
 app.get('/students/:id', require('./controllers/getUser.js'))
-app.patch('/students/:id', upload.single('avatar'), require('./controllers/patchUser.js'))
+app.patch('/students/:id', require('./controllers/patchUser.js'))
 app.get('/teachers', require('./controllers/getTeachers.js'))
-app.patch('/teachers/:id', upload.single('avatar'), require('./controllers/patchUser.js'))
+app.patch('/teachers/:id', require('./controllers/patchUser.js'))
 app.post('/auth', require('./controllers/postAuthorize.js'))
+app.patch('/user/avatar/:id', upload.single('avatar'), require('./controllers/uploadAvatar.js'))
 
 //Courses
 app.post('/admin/postCourse', require('./controllers/postCourse.js'))

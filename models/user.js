@@ -33,7 +33,6 @@ let user = mongoose.model('user', {
 	},
 	avatar: {
 		type: String,
-		default: 'https://thispersondoesnotexist.com'
 	},
 	school: {
 		type: mongoose.Schema.Types.ObjectId,
@@ -45,6 +44,7 @@ let user = mongoose.model('user', {
 		default: Date.now
 	},
 	about: String,
+	phone: String,
 	address: {
 		streetAddress: { 
 			type: String,

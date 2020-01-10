@@ -11,7 +11,11 @@ let postUser = (req, res) => {
 				res.send('error')
 			} else {
 				// ADD PROFILE PICTURE FILE TO REQUEST BODY
-				req.body.avatar = `${req.protocol}://${req.get('host')}/${req.file.filename}`
+				if (req.body.avatar) {
+					req.body.avatar = `${req.protocol}://${req.get('host')}/${req.file.filename}`
+				} else {
+					req.body.avatar = `${req.protocol}://${req.get('host')}/service_default_avatar_182956.png`
+				}
 				// HASH PASSWORD BEFORE CREATING STUDENT
 				req.body.password = bcrypt.hashSync(req.body.password, 10)
 				// SIGNUP STUDENT
